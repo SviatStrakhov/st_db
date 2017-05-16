@@ -27,23 +27,3 @@ def students_edit(request, sid):
 
 def students_delete(request, sid):
 	return HttpResponse('delete' % sid)
-
-
-
-#Views Groups
-def groups_list(request):
-	return render(request, 'students/groups_list.html', {})
-
-def groups_add(request):
-	return HttpResponse('<h1>add</h1>')
-
-def groups_edit(request, gid):
-	return HttpResponse('<h1>Edit</h1>' % gid)
-
-def groups_delete(request, gid):
-	return HttpResponse('<h1>delete</h1>' % gid)
-
-
-
-def journal(request):
-	return HttpResponse('<h1>Journal</h1>')
