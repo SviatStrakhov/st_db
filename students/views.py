@@ -1,15 +1,29 @@
+# -*- coding: utf-8 -*-
+
 from django.shortcuts import render
 from django.http import HttpResponse
 
 # Views Students
 def students_list(request):
-	return render(request, 'students/students_list.html', {})
+	students = (
+        {'id': 1,
+         'first_name': u'Віталій',
+         'last_name': u'Подоба',
+         'ticket': 235,
+         'image': 'img/KLIjhEoP.jpeg'},
+        {'id': 2,
+         'first_name': u'Корост',
+         'last_name': u'Андрій',
+         'ticket': 2123,
+         'image': 'img/KLIjhEoP.jpeg'},
+)
+	return render(request, 'students/students_list.html', {'students': students})
 
 def students_add(request):
 	return HttpResponse('ADD')
 
 def students_edit(request, sid):
-	return HttpResponse('edit huy')
+	return HttpResponse('edit' % sid)
 
 def students_delete(request, sid):
 	return HttpResponse('delete' % sid)
@@ -18,7 +32,7 @@ def students_delete(request, sid):
 
 #Views Groups
 def groups_list(request):
-	return HttpResponse('<h1>Groups Listing</h1>')
+	return render(request, 'students/groups_list.html', {})
 
 def groups_add(request):
 	return HttpResponse('<h1>add</h1>')
