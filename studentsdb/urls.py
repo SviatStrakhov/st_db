@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from .settings import MEDIA_ROOT, DEBUG
 from students.views.students_views import *
 from students.views.groups_views import *
 from students.views.journal_views import *
+
 urlpatterns = [
 	# Students urls
 	url(r'^$', students_list, name='home'),
@@ -38,3 +40,8 @@ urlpatterns = [
 
     url(r'^admin/', admin.site.urls),
 ]
+
+
+
+
+
